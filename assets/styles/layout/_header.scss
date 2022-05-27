@@ -1,0 +1,99 @@
+header {
+  background: url(../img/bg-slider-06.jpg) center/cover;
+  height: 100vh;
+
+  nav {
+    @include Center();
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width:800px) {
+      justify-content: space-around;
+    }
+
+
+    .allura,
+    ul {
+      color: $white;
+      margin-top: 30px;
+    }
+
+    .allura {
+      font-size: 3rem;
+    }
+
+    ul {
+      cursor: pointer;
+
+      li {
+        height: 25px;
+      }
+    }
+
+    .navigation {
+      width: 80%;
+      font-family: $font2;
+      text-transform: uppercase;
+      justify-content: space-around;
+
+      @media screen and (max-width:800px) {
+        display: none;
+      }
+
+
+      li {
+        transition: 0.4s;
+
+        &:hover {
+          color: $orange;
+          transform: scale(1.2);
+          border-bottom: 2px solid $orange;
+        }
+      }
+    }
+
+    .networks {
+      width: 10%;
+      font-size: 1.2rem;
+      justify-content: space-between;
+
+      @media screen and (max-width:800px) {
+        width: 30%;
+      }
+
+      li {
+        transition: 0.4s;
+
+        &:hover {
+          color: $orange;
+          transform: scale(1.4);
+        }
+      }
+    }
+  }
+
+  .title {
+    height: 90vh;
+    padding-bottom: 140px;
+    @include Center();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .img {
+      background: url(../img/ic-plate-big.png) no-repeat center/cover;
+      height: 50px;
+      width: 50px;
+    }
+
+    p {
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+  }
+}

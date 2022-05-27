@@ -1,0 +1,217 @@
+main {
+  .section1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    @media screen and (max-width:800px) {
+      grid-template-columns: 100%;
+    }
+
+    .left-part {
+      background: $white;
+      padding: 20px;
+
+      .container {
+        border: 3px dotted $black;
+        padding: 30px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3:last-of-type {
+          padding-bottom: 20px;
+        }
+
+        .img1 {
+          background: url(../img/ic-plate.png) no-repeat center/cover;
+          width: 30px;
+          height: 30px;
+        }
+
+        p {
+          text-align: center;
+          line-height: 25px;
+          padding: 20px 0;
+        }
+
+        .img2 {
+          background: url(../img/avatar-01.jpg) no-repeat center/cover;
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+        }
+
+        h4 {
+          font-family: $font2;
+          color: $black;
+          padding-top: 20px;
+        }
+
+        h5 {
+          font-family: $font2;
+          text-transform: uppercase;
+          color: $grey;
+        }
+      }
+    }
+
+    .right-part {
+      background: url(../img/store-01.jpg) center/cover;
+
+      @media screen and (max-width:800px) {
+        display: none;
+      }
+    }
+  }
+
+  .section2 {
+    position: relative;
+
+    .section-background {
+      background: url(../img/bg-menu-01.jpg) center/cover;
+      z-index: -1;
+      width: 100%;
+      height: 65%;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .menu {
+      @include Center();
+      text-align: center;
+      padding-bottom: 130px;
+
+      .allura {
+        padding: 30px 0;
+      }
+
+      .img {
+        background: url(..//img/ic-plate.png);
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+      }
+
+      ul {
+        justify-content: space-evenly;
+        font-family: $font2;
+        color: $white;
+        padding: 30px 0;
+
+        li {
+          border-bottom: 1px solid $orange;
+          padding: 3px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            color: $orange;
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      .items-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 0;
+        background: $white;
+        border-top: 5px solid $orange;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        @media screen and (max-width:700px) {
+          grid-template-columns: 100%;
+          grid-template-rows: repeat(1fr*8);
+          max-width: 90%;
+        }
+
+        .item {
+          display: grid;
+          grid-template-columns: 70% 30%;
+          align-items: center;
+          margin: 0 20px;
+          padding: 30px 0;
+          border-bottom: 2px dotted $grey;
+
+          h3 {
+            color: $orange;
+
+            @media screen and (max-width:700px) {
+              font-size: 1.7rem;
+            }
+          }
+
+          .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+              "img title"
+              "img description";
+            align-items: center;
+
+            div {
+              grid-area: img;
+              width: 100px;
+              height: 100px;
+              margin: 0 auto;
+              border-radius: 50px;
+
+              @media screen and (max-width:700px) {
+                width: 80px;
+                height: 80px;
+              }
+            }
+
+            .dish-item1 {
+              background: url(../img/dish-item-01.jpg) center/cover;
+            }
+
+            .dish-item2 {
+              background: url(../img/dish-item-02.jpg) center/cover;
+            }
+
+            .dish-item3 {
+              background: url(../img/dish-item-03.jpg) center/cover;
+            }
+
+            .dish-item4 {
+              background: url(../img/dish-item-04.jpg) center/cover;
+            }
+
+            .dish-item5 {
+              background: url(../img/dish-item-05.jpg) center/cover;
+            }
+
+            .dish-item6 {
+              background: url(../img/dish-item-06.jpg) center/cover;
+            }
+
+            .dish-item7 {
+              background: url(../img/dish-item-07.jpg) center/cover;
+            }
+
+            .dish-item8 {
+              background: url(../img/dish-item-08.jpg) center/cover;
+            }
+
+            h5 {
+              grid-area: title;
+              font-family: $font2;
+              font-size: 0.8rem;
+              text-transform: uppercase;
+            }
+
+            p {
+              grid-area: description;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

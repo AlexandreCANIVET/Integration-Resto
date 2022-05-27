@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Allura";
+  src: url(../fonts/Allura/Allura-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+
+$font1: "Allura",
+sans-serif;
+$font2: "Poppins",
+serif;
+$font3: "Roboto",
+arial;
+$white: rgb(238, 238, 238);
+$orange: rgb(166, 114, 69);
+$black: rgb(33, 32, 30);
+$grey: rgb(89, 89, 86);
+
+@mixin AlluraTitle {
+  font-family: $font1;
+  color: $orange;
+}
+
+@mixin Center {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $black;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a,
+a:visited {
+  font-family: $font3;
+  color: $black;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+p {
+  font-family: $font2;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: $font2;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: $white;
+  text-align: center
+}
+
+h2 {
+  @include AlluraTitle();
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-family: $font2;
+  font-weight: bold;
+  font-size: 2rem
+}
+
+.allura {
+  @include AlluraTitle();
+
+}
