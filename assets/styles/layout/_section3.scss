@@ -1,0 +1,189 @@
+main {
+  .section3 {
+    @include Center();
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+    @media screen and (max-width:1000px) {
+      max-width: 90%;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    @media screen and (max-width:800px) {
+      grid-template-rows: 40% 60%;
+    }
+
+    .left-part {
+      background: black;
+      padding: 20px;
+
+      .container {
+        border: 2px dotted $white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 100%;
+
+        h3:last-of-type {
+          color: $white;
+          text-transform: uppercase;
+        }
+
+        .img {
+          background: url(../img/ic-plate.png) center/cover;
+          height: 30px;
+          width: 30px;
+        }
+
+        div {
+          text-align: center;
+        }
+
+        h4 {
+          color: $orange;
+          text-transform: uppercase;
+          font-family: $font2;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+
+        p {
+          color: $white;
+          text-align: center;
+        }
+      }
+    }
+
+    .right-part {
+      background: $white;
+      max-width: 900px;
+
+      .container {
+        margin: 50px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .title-h3 {
+          h3 {
+            text-align: center;
+          }
+
+          h3:last-of-type {
+            text-transform: uppercase;
+          }
+        }
+
+        .img {
+          background: url(../img/ic-plate.png) center/cover;
+          height: 30px;
+          width: 30px;
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-areas:
+            "people date time"
+            "name phone email"
+            "btn btn btn";
+          gap: 40px 20px;
+
+          @media screen and (max-width:800px) {
+            width: 70%;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(1fr*7);
+            grid-template-areas:
+              "people"
+              "date"
+              "time"
+              "name"
+              "phone"
+              "email"
+              "btn";
+          }
+
+          select {
+            grid-area: people;
+            @include FormSettings();
+            cursor: pointer;
+
+            &:focus {
+              border: 2px solid $black;
+              border-radius: 4px;
+            }
+          }
+
+          input[type="date"] {
+            grid-area: date;
+            @include FormSettings();
+            cursor: pointer;
+          }
+
+          input[type="time"] {
+            grid-area: time;
+            @include FormSettings();
+            cursor: pointer;
+          }
+
+          #name {
+            grid-area: name;
+            @include FormSettings();
+          }
+
+          #phone {
+            grid-area: phone;
+            @include FormSettings();
+          }
+
+          #email {
+            grid-area: email;
+            @include FormSettings();
+          }
+
+          input[type="submit"] {
+            grid-area: btn;
+            margin-top: 50px;
+            max-width: 400px;
+            width: 35%;
+            margin: 0 auto;
+            padding: 20px 10px;
+            background: $black;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+            transition: 0.4s;
+
+            &:hover {
+              background: $orange;
+              transform: scale(0.95);
+              letter-spacing: 3px;
+            }
+
+            @media screen and (max-width:1000px) {
+              font-size: 0.9rem;
+              width: 70%;
+            }
+
+            @media screen and (max-width:400px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

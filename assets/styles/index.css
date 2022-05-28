@@ -370,8 +370,8 @@ main .section2 .menu .items-list {
 main .section2 .menu .items-list .item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 70% 30%;
-      grid-template-columns: 70% 30%;
+  -ms-grid-columns: 75% 25%;
+      grid-template-columns: 75% 25%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -467,5 +467,261 @@ main .section2 .menu .items-list .item .container p {
   -ms-grid-column: 2;
   grid-area: description;
   font-size: 0.8rem;
+}
+
+main .section3 {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+}
+
+@media screen and (max-width: 1000px) {
+  main .section3 {
+    max-width: 90%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main .section3 {
+    -ms-grid-rows: 40% 60%;
+        grid-template-rows: 40% 60%;
+  }
+}
+
+main .section3 .left-part {
+  background: black;
+  padding: 20px;
+}
+
+main .section3 .left-part .container {
+  border: 2px dotted #eeeeee;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  height: 100%;
+}
+
+main .section3 .left-part .container h3:last-of-type {
+  color: #eeeeee;
+  text-transform: uppercase;
+}
+
+main .section3 .left-part .container .img {
+  background: url(../img/ic-plate.png) center/cover;
+  height: 30px;
+  width: 30px;
+}
+
+main .section3 .left-part .container div {
+  text-align: center;
+}
+
+main .section3 .left-part .container h4 {
+  color: #a67245;
+  text-transform: uppercase;
+  font-family: "Poppins", serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+main .section3 .left-part .container p {
+  color: #eeeeee;
+  text-align: center;
+}
+
+main .section3 .right-part {
+  background: #eeeeee;
+  max-width: 900px;
+}
+
+main .section3 .right-part .container {
+  margin: 50px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+main .section3 .right-part .container .title-h3 h3 {
+  text-align: center;
+}
+
+main .section3 .right-part .container .title-h3 h3:last-of-type {
+  text-transform: uppercase;
+}
+
+main .section3 .right-part .container .img {
+  background: url(../img/ic-plate.png) center/cover;
+  height: 30px;
+  width: 30px;
+}
+
+main .section3 .right-part .container form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "people date time" "name phone email" "btn btn btn";
+  gap: 40px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  main .section3 .right-part .container form {
+    width: 70%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: ()[7fr];
+        grid-template-rows: repeat(7fr);
+        grid-template-areas: "people" "date" "time" "name" "phone" "email" "btn";
+  }
+}
+
+main .section3 .right-part .container form select {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: people;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+main .section3 .right-part .container form select:focus {
+  border: 2px solid #21201e;
+  border-radius: 4px;
+}
+
+main .section3 .right-part .container form input[type="date"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: date;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+main .section3 .right-part .container form input[type="time"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: time;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+main .section3 .right-part .container form #name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: name;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+main .section3 .right-part .container form #phone {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: phone;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+main .section3 .right-part .container form #email {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: email;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #595956;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+main .section3 .right-part .container form input[type="submit"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: btn;
+  margin-top: 50px;
+  max-width: 400px;
+  width: 35%;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background: #21201e;
+  color: #eeeeee;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+main .section3 .right-part .container form input[type="submit"]:hover {
+  background: #a67245;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 1000px) {
+  main .section3 .right-part .container form input[type="submit"] {
+    font-size: 0.9rem;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main .section3 .right-part .container form input[type="submit"] {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=index.css.map */
