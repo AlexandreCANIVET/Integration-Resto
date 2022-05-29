@@ -1,0 +1,161 @@
+main {
+  .section4 {
+    @include Center();
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+
+    .title-h3 {
+      text-align: center;
+
+      h3:last-of-type {
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+
+    .img {
+      background: url(../img/ic-plate.png) center/cover;
+      height: 30px;
+      width: 30px;
+    }
+
+    .news-container {
+      width: 95%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "new1 new1 new1 new3 new3"
+        "new2 new2 new2 new3 new3";
+      gap: 20px;
+
+      .new1,
+      .new2 {
+        display: grid;
+        grid-template-columns: 40% 60%;
+
+        .left-new-container {
+          height: 100%;
+          width: 100%;
+          padding: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          h4 {
+            background: $black;
+            color: $white;
+            text-align: center;
+            font-family: $font2;
+            padding: 25px;
+            font-size: 1.1rem;
+            line-height: 20px;
+            font-weight: lighter;
+
+            span {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .right-new-container {
+          background: $white;
+          padding: 30px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          h4 {
+            font-family: $font2;
+            letter-spacing: 2px;
+            font-weight: 100;
+          }
+
+          p {
+            color: $grey2;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .new1 {
+        grid-area: new1;
+
+        .left-new-container {
+          background: url(../img/event-01.jpg) center/cover;
+        }
+      }
+
+      .new2 {
+        grid-area: new2;
+
+        .left-new-container {
+          background: url(../img/event-02.jpg) center/cover;
+        }
+      }
+
+      .new3 {
+        grid-area: new3;
+        background: url(../img/event-03.jpg) center/cover;
+
+        .new3-container {
+          background: $white;
+          margin: 20px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          gap: 40px;
+
+          .date {
+            background: $black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 30px;
+            line-height: 20px;
+
+            span {
+              font-size: 1.5rem;
+            }
+          }
+
+          h4 {
+            font-family: $font2;
+            font-weight: 100;
+          }
+
+          .h4-p-container {
+            margin: 0 20px;
+            letter-spacing: 2px;
+
+            h4 {
+              font-size: 1.2rem;
+              padding: 10px 20px;
+            }
+
+            p {
+              color: $grey2;
+              padding: 10px 0;
+            }
+          }
+
+          a {
+            padding-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+}

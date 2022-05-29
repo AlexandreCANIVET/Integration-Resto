@@ -1,0 +1,76 @@
+main {
+  .section5 {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 350px;
+
+    .section-background {
+      background: url(../img/gmap.jpg) center/cover;
+      position: absolute;
+      bottom: 0;
+      height: 500px;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .testimonial {
+      @include Center();
+      max-width: 82%;
+      background: $white;
+      text-align: center;
+      padding: 50px 0;
+      line-height: 40px;
+
+      @media screen and (max-width: 700px) {
+        max-width: 90%;
+      }
+
+      .absolute-img {
+        background: url(../img/avatar-02.jpg) top/cover;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%) translateY(50%);
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: lighter;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+
+        &::before {
+          content: "\275D";
+          font-size: 1.5rem;
+          padding: 5px;
+        }
+
+        &::after {
+          content: "\00275E";
+          font-size: 1.5rem;
+          padding: 5px;
+        }
+      }
+
+      h4 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-family: $font2;
+        font-weight: lighter;
+        padding-top: 30px;
+      }
+
+      h5 {
+        font-size: 1.1rem;
+        color: $orange;
+        font-family: $font2;
+        letter-spacing: 2px;
+        font-weight: 200;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ header {
 
   nav {
     @include Center();
+    max-width: 95%;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -25,15 +26,15 @@ header {
     }
 
     ul {
-      cursor: pointer;
 
       li {
         height: 25px;
+        cursor: pointer;
       }
     }
 
     .navigation {
-      width: 80%;
+      width: 70%;
       font-family: $font2;
       text-transform: uppercase;
       justify-content: space-around;
